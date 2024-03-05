@@ -170,13 +170,9 @@ gsap.to(".scroll-to-explore", {
     opacity: 1,
     duration: 2,
     delay: 5.8,
-    ease: 'power3.out'
-})
-
-gsap.registerPlugin(ScrollTrigger);
-
-gsap.fromTo(".scroll-to-explore", 
-  { opacity: 1 }, 
+    ease: 'power3.out',
+    onComplete: () => {
+        gsap.to(".scroll-to-explore", 
   {
     opacity: 0,
     duration: 2,
@@ -188,6 +184,10 @@ gsap.fromTo(".scroll-to-explore",
     }
   }
 );
+    }
+})
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Controls
 
