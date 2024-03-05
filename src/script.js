@@ -160,6 +160,7 @@ gsap.to(camera.position, {
 gsap.to(element, {
     opacity: 0,
     duration: 2,
+    delay: 5.8,
     ease: 'power3.out'
 })
 
