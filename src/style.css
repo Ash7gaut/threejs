@@ -37,3 +37,15 @@ h2 {
     text-align: center;
     font-size: 6vw;
 }
+
+.scroll-to-explore {
+    position: absolute;
+    z-index: 3;
+    bottom: 100px;
+    right: 100px;
+    padding: 10px;
+    font-size: 1.2em;
+    color: #1113DB;
+    font-family: Hk;
+    opacity: 0;
+}

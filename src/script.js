@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 /**
@@ -9,6 +10,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 const canvas = document.querySelector('canvas.webgl')
 
 const element = document.querySelector('.antonin');
+const scrolltoexplore = document.querySelector('.scroll-to-explore');
 
 // Scene
 const scene = new THREE.Scene()
@@ -164,6 +166,28 @@ gsap.to(element, {
     ease: 'power3.out'
 })
 
+gsap.to(".scroll-to-explore", {
+    opacity: 1,
+    duration: 2,
+    delay: 5.8,
+    ease: 'power3.out'
+})
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.fromTo(".scroll-to-explore", 
+  { opacity: 1 }, 
+  {
+    opacity: 0,
+    duration: 2,
+    scrollTrigger: {
+      trigger: ".antonin",
+      start: "10%", 
+      end: "100%", 
+      scrub: 1, 
+    }
+  }
+);
 
 // Controls
 
