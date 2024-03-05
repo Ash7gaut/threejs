@@ -8,6 +8,8 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
 
+const element = document.querySelector('.antonin');
+
 // Scene
 const scene = new THREE.Scene()
 
@@ -152,6 +154,12 @@ gsap.to(camera.position, {
     z: 0.5, 
     duration: 15,
     delay: 1,
+    ease: 'power3.out'
+})
+
+gsap.to(element, {
+    opacity: 0,
+    duration: 2,
     ease: 'power3.out'
 })
 
